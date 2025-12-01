@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="description" content="Hypertension Survey - Personalized Management Study">
+    <title>Hypertension Survey App</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="HTN Survey">
+    
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --success: #198754;
+            --danger: #dc3545;
+        }
+        
+        body {
+            padding-bottom: 90px;
+            background-color: #f8f9fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        
+        .nav-tabs {
+            background: white;
+            padding: 5px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            color: #6c757d;
+            padding: 8px 12px;
+            font-size: 14px;
+            white-space: nowrap;
+            border-radius: 6px;
+        }
+        
+        .nav-tabs .nav-link.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .section-header {
+            background: linear-gradient(135deg, var(--primary), #0b5ed7);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .question-group {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        
+        .form-label {
+            font-weight: 500;
+            color: #495057;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .required::after {
+            content: " *";
+            color: var(--danger);
+        }
+        
+        .form-control, .form-select {
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 14px;
+        }
+        
+        .form-check {
+            padding: 8px 0;
+            padding-left: 1.5em;
+        }
+        
+        .form-check-label {
+            font-size: 14px;
+            margin-left: 5px;
+        }
+        
+        .scale-table {
+            font-size: 13px;
+            width: 100%;
+        }
+        
+        .scale-table td, .scale-table th {
+            padding: 8px 4px;
+            vertical-align: middle;
+            text-align: center;
+        }
+        
+        .scale-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            min-width: 200px;
+        }
+        
+        .fixed-bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 12px 15px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .btn-action {
+            font-size: 14px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            gap: 5px;
+        }
+        
+        .online {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+        
+        .offline {
+            background: #f8d7da;
+            color: #842029;
+        }
+        
+        .install-prompt {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+            max-width: 90%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .data-table {
+            font-size: 13px;
+        }
+        
+        .data-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 500;
+        }
+        
+        .tab-pane {
+            display: none;
+        }
+        
+        .tab-pane.show.active {
+            display: block;
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .question-group {
+                padding: 12px;
+            }
+            
+            .btn-action {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+            
+            .scale-table {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-dark bg-primary sticky-top">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">
+                <i class="bi bi-heart-pulse-fill"></i> Hypertension Survey
+            </span>
+            <span class="status-badge" id="connectionStatus">
+                <i class="bi bi-wifi"></i> <span id="statusText">Online</span>
+            </span>
+        </div>
+    </nav>
+
+    <!-- Install Prompt -->
+    <div class="alert alert-info alert-dismissible install-prompt" id="installPrompt" style="display: none;">
+        <button type="button" class="btn-close" onclick="document.getElementById('installPrompt').style.display='none'"></button>
+        <i class="bi bi-download"></i> <strong>Install App</strong> - Add to home screen for offline use
+        <button class="btn btn-sm btn-primary ms-2" id="installBtn">Install</button>
+    </div>
+
+    <div class="container mt-3">
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs" id="mainTab"></ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="mainTabContent"></div>
+    </div>
+
+    <!-- Fixed Bottom Bar -->
+    <div class="fixed-bottom-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center gap-2">
+                <button class="btn btn-outline-primary btn-action" onclick="clearCurrentForm()">
+                    <i class="bi bi-arrow-counterclockwise"></i> Clear
+                </button>
+                <button class="btn btn-success btn-action" onclick="saveProgress()">
+                    <i class="bi bi-save"></i> Save
+                </button>
+                <button class="btn btn-primary btn-action" onclick="submitCurrentForm()">
+                    <i class="bi bi-check-circle"></i> Submit
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Questions Data -->
+    <script src="questions.js"></script>
+    
+    <script>
+        // ===== GLOBAL STATE =====
+        let currentQuestionnaireType = 'patients';
+        let db;
+        let deferredPrompt;
+
+        // ===== DATABASE FUNCTIONS =====
+        const DB_NAME = 'HypertensionSurveyDB';
+        const DB_VERSION = 1;
+
+        function initDB() {
+            const request = indexedDB.open(DB_NAME, DB_VERSION);
+            
+            request.onerror = () => {
+                console.error('Database failed to open');
+                alert('Unable to open database. App may not work offline.');
+            };
+            
+            request.onsuccess = () => {
+                db = request.result;
+                console.log('Database opened successfully');
+                if (currentQuestionnaireType === 'data') {
+                    loadDataTable();
+                }
+            };
+            
+            request.onupgradeneeded = (e) => {
+                db = e.target.result;
+                if (!db.objectStoreNames.contains('responses')) {
+                    const store = db.createObjectStore('responses', { keyPath: 'id', autoIncrement: true });
+                    store.createIndex('type', 'type', { unique: false });
+                    store.createIndex('timestamp', 'timestamp', { unique: false });
+                    console.log('Database setup complete');
+                }
+            };
+        }
+
+        function saveResponse(type, data) {
+            return new Promise((resolve, reject) => {
+                if (!db) {
+                    reject('Database not initialized');
+                    return;
+                }
+                
+                const transaction = db.transaction(['responses'], 'readwrite');
+                const store = transaction.objectStore('responses');
+                
+                const responseData = {
+                    type: type,
+                    data: data,
+                    timestamp: new Date().toISOString(),
+                    respondentId: generateRespondentId(type)
+                };
+                
+                const request = store.add(responseData);
+                request.onsuccess = () => resolve(responseData);
+                request.onerror = () => reject(request.error);
+            });
+        }
+
+        function getAllResponses() {
+            return new Promise((resolve, reject) => {
+                if (!db) {
+                    reject('Database not initialized');
+                    return;
+                }
+                
+                const transaction = db.transaction(['responses'], 'readonly');
+                const store = transaction.objectStore('responses');
+                const request = store.getAll();
+                
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+        }
+
+        function deleteResponse(id) {
+            return new Promise((resolve, reject) => {
+                if (!db) {
+                    reject('Database not initialized');
+                    return;
+                }
+                
+                const transaction = db.transaction(['responses'], 'readwrite');
+                const store = transaction.objectStore('responses');
+                const request = store.delete(id);
+                
+                request.onsuccess = () => {
+                    resolve();
+                    loadDataTable();
+                };
+                request.onerror = () => reject(request.error);
+            });
+        }
+
+        function exportData() {
+            getAllResponses().then(responses => {
+                const dataStr = JSON.stringify(responses, null, 2);
+                const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `hypertension-survey-data-${new Date().toISOString()}.json`;
+                link.click();
+            }).catch(err => {
+                console.error('Export failed:', err);
+                alert('Failed to export data');
+            });
+        }
+
+        function generateRespondentId(type) {
+            const prefixes = {
+                'patients': 'PAT',
+                'clinicians': 'CLN',
+                'herbalists': 'HRB',
+                'caregivers': 'CG',
+                'policymakers': 'POL'
+            };
+            const prefix = prefixes[type] || 'RES';
+            const num = String(Date.now()).slice(-6);
+            return `${prefix}${num}`;
+        }
+
+        // ===== UI RENDERING =====
+        function renderApp() {
+            renderTabs();
+            attachTabListeners();
+            updateConnectionStatus();
+            
+            // Set current date for all date inputs
+            const today = new Date().toISOString().split('T')[0];
+            document.querySelectorAll('input[type="date"]').forEach(input => {
+                if (!input.value) input.value = today;
+            });
+            
+            // Attach conditional logic
+            attachConditionalLogic();
+        }
+
+        function renderTabs() {
+            const tabContainer = document.getElementById('mainTab');
+            const contentContainer = document.getElementById('mainTabContent');
+            
+            tabContainer.innerHTML = '';
+            contentContainer.innerHTML = '';
+            
+            Object.values(QUESTIONNAIRES).forEach((q, index) => {
+                // Render tab button
+                const tabLi = document.createElement('li');
+                tabLi.className = 'nav-item';
+                
+                const tabButton = document.createElement('button');
+                tabButton.className = `nav-link ${index === 0 ? 'active' : ''}`;
+                tabButton.setAttribute('data-tab', q.id);
+                tabButton.type = 'button';
+                tabButton.innerHTML = `<i class="bi ${q.icon}"></i> ${q.title.split(' ')[0]}`;
+                
+                tabLi.appendChild(tabButton);
+                tabContainer.appendChild(tabLi);
+                
+                // Render tab content
+                const tabPane = document.createElement('div');
+                tabPane.className = `tab-pane ${index === 0 ? 'show active' : ''}`;
+                tabPane.id = q.id;
+                tabPane.setAttribute('role', 'tabpanel');
+                
+                if (q.isDataView) {
+                    tabPane.innerHTML = renderDataView();
+                } else {
+                    tabPane.innerHTML = renderQuestionnaire(q);
+                }
+                
+                contentContainer.appendChild(tabPane);
+            });
+        }
+
+        function renderQuestionnaire(questionnaire) {
+            let html = `
+                <form id="${questionnaire.id}Form" class="needs-validation" novalidate>
+                    <div class="section-header">
+                        <h5 class="mb-0"><i class="bi ${questionnaire.icon}"></i> ${questionnaire.title}</h5>
+                        <small>Respondent ID: <span class="respondent-id badge bg-light text-dark">Auto-generated on submit</span></small>
+                    </div>
+            `;
+            
+            questionnaire.sections.forEach(section => {
+                if (section.title) {
+                    html += `
+                        <div class="section-header mt-3">
+                            <h6 class="mb-0">${section.title}</h6>
+                            ${section.description ? `<small class="text-white-50">${section.description}</small>` : ''}
+                        </div>
+                    `;
+                }
+                
+                section.questions.forEach(question => {
+                    html += renderQuestion(question, questionnaire.id);
+                });
+            });
+            
+            html += `</form>`;
+            return html;
+        }
+
+        function renderQuestion(question, formId) {
+            const showIfAttr = question.showIf ? 
+                `data-show-if-field="${question.showIf.field}" data-show-if-value="${question.showIf.value}" style="display:none;"` : '';
+            
+            let html = `<div class="question-group" ${showIfAttr}>`;
+            
+            if (question.type === 'scale') {
+                html += renderScaleQuestion(question, formId);
+            } else if (question.type === 'checkbox') {
+                html += renderCheckboxQuestion(question, formId);
+            } else if (question.type === 'radio') {
+                html += renderRadioQuestion(question, formId);
+            } else if (question.type === 'select') {
+                html += renderSelectQuestion(question, formId);
+            } else if (question.type === 'text' || question.type === 'date') {
+                html += renderTextQuestion(question, formId);
+            }
+            
+            html += `</div>`;
+            return html;
+        }
+
+        function renderTextQuestion(q, formId) {
+            const inputType = q.type === 'date' ? 'date' : 'text';
+            const maxlengthAttr = q.maxlength ? `maxlength="${q.maxlength}"` : '';
+            return `
+                <label class="form-label ${q.required ? 'required' : ''}">${q.label}</label>
+                <input type="${inputType}" class="form-control" name="${q.id}" 
+                       id="${formId}_${q.id}" ${q.required ? 'required' : ''} ${maxlengthAttr}>
+            `;
+        }
+
+        function renderSelectQuestion(q, formId) {
+            let html = `<label class="form-label ${q.required ? 'required' : ''}">${q.label}</label>
+                        <select class="form-select" name="${q.id}" id="${formId}_${q.id}" ${q.required ? 'required' : ''}>
+                            <option value="">-- Select --</option>`;
+            q.options.forEach(opt => {
+                html += `<option value="${opt}">${opt}</option>`;
+            });
+            html += `</select>`;
+            return html;
+        }
+
+        function renderRadioQuestion(q, formId) {
+            let html = `<label class="form-label ${q.required ? 'required' : ''}">${q.label}</label><div>`;
+            q.options.forEach((opt, i) => {
+                html += `
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="${q.id}" 
+                               id="${formId}_${q.id}_${i}" value="${opt}" ${q.required ? 'required' : ''}>
+                        <label class="form-check-label" for="${formId}_${q.id}_${i}">${opt}</label>
+                    </div>
+                `;
+            });
+            html += `</div>`;
+            return html;
+        }
+
+        function renderCheckboxQuestion(q, formId) {
+            let html = `<label class="form-label">${q.label}</label><div>`;
+            q.options.forEach((opt, i) => {
+                html += `
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="${q.id}[]" 
+                               id="${formId}_${q.id}_${i}" value="${opt}">
+                        <label class="form-check-label" for="${formId}_${q.id}_${i}">${opt}</label>
+                    </div>
+                `;
+            });
+            html += `</div>`;
+            return html;
+        }
+
+        function renderScaleQuestion(q, formId) {
+            let html = `<div class="table-responsive">
+                        <table class="table scale-table">
+                            <thead>
+                                <tr>
+                                    <th>Statement</th>`;
+            q.scale.forEach(val => {
+                html += `<th>${val}</th>`;
+            });
+            html += `</tr></thead><tbody>`;
+            
+            q.items.forEach(item => {
+                html += `<tr><td>${item.text}</td>`;
+                q.scale.forEach(val => {
+                    html += `<td>
+                        <input class="form-check-input" type="radio" 
+                               name="${item.id}" value="${val}" 
+                               id="${formId}_${item.id}_${val}" ${q.required ? 'required' : ''}>
+                    </td>`;
+                });
+                html += `</tr>`;
+            });
+            
+            html += `</tbody></table></div>`;
+            return html;
+        }
+
+        function renderDataView() {
+            return `
+                <div class="section-header">
+                    <h5 class="mb-0"><i class="bi bi-database"></i> Collected Survey Data</h5>
+                    <small>All submitted responses stored locally</small>
+                </div>
+                
+                <div class="question-group">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="mb-0">Responses (<span id="responseCount">0</span>)</h6>
+                        <button class="btn btn-sm btn-success" onclick="exportData()">
+                            <i class="bi bi-download"></i> Export JSON
+                        </button>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-striped data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Type</th>
+                                    <th>Respondent ID</th>
+                                    <th>Timestamp</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dataTableBody">
+                                <tr><td colspan="5" class="text-center">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+        }
+
+        function loadDataTable() {
+            getAllResponses().then(responses => {
+                const tbody = document.getElementById('dataTableBody');
+                const countSpan = document.getElementById('responseCount');
+                
+                if (countSpan) countSpan.textContent = responses.length;
+                
+                if (!tbody) return;
+                
+                if (responses.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5" class="text-center">No responses yet</td></tr>';
+                    return;
+                }
+                
+                tbody.innerHTML = '';
+                responses.reverse().forEach(resp => {
+                    const tr = document.createElement('tr');
+                    const date = new Date(resp.timestamp).toLocaleString();
+                    
+                    tr.innerHTML = `
+                        <td>${resp.id}</td>
+                        <td><span class="badge bg-primary">${resp.type}</span></td>
+                        <td>${resp.respondentId}</td>
+                        <td>${date}</td>
+                        <td>
+                            <button class="btn btn-sm btn-info" onclick='viewResponse(${JSON.stringify(resp).replace(/'/g, "&apos;")})'>
+                                <i class="bi bi-eye"></i>
+                            </button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteResponse(${resp.id})">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }).catch(err => {
+                console.error('Failed to load data:', err);
+            });
+        }
+
+        function viewResponse(response) {
+            const modal = `
+                <div class="modal fade" id="viewModal" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Response Details - ${response.respondentId}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <pre class="bg-light p-3 rounded">${JSON.stringify(response.data, null, 2)}</pre>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', modal);
+            const modalEl = new bootstrap.Modal(document.getElementById('viewModal'));
+            modalEl.show();
+            document.getElementById('viewModal').addEventListener('hidden.bs.modal', function () {
+                this.remove();
+            });
+        }
+
+        // ===== FORM FUNCTIONS =====
+        function attachConditionalLogic() {
+            document.querySelectorAll('[data-show-if-field]').forEach(element => {
+                const triggerField = element.getAttribute('data-show-if-field');
+                const triggerValue = element.getAttribute('data-show-if-value');
+                
+                // Find the trigger input
+                const triggers = document.querySelectorAll(`[name="${triggerField}"]`);
+                triggers.forEach(trigger => {
+                    trigger.addEventListener('change', () => {
+                        const currentValue = trigger.type === 'radio' ? 
+                            (trigger.checked ? trigger.value : null) :
+                            trigger.value;
+                        
+                        if (currentValue === triggerValue) {
+                            element.style.display = 'block';
+                        } else {
+                            element.style.display = 'none';
+                            // Clear hidden fields
+                            element.querySelectorAll('input, select, textarea').forEach(input => {
+                                if (input.type === 'checkbox' || input.type === 'radio') {
+                                    input.checked = false;
+                                } else {
+                                    input.value = '';
+                                }
+                            });
+                        }
+                    });
+                });
+            });
+        }
+
+        function getCurrentFormType() {
+            const activeTab = document.querySelector('.tab-pane.active');
+            return activeTab ? activeTab.id : 'patients';
+        }
+
+        function getCurrentFormData() {
+            const formType = getCurrentFormType();
+            if (formType === 'data') return null;
+            
+            const form = document.getElementById(formType + 'Form');
+            if (!form) return null;
+            
+            const formData = {};
+            const inputs = form.querySelectorAll('input, select, textarea');
+            
+            inputs.forEach(input => {
+                if (input.type === 'checkbox') {
+                    if (!formData[input.name]) formData[input.name] = [];
+                    if (input.checked) formData[input.name].push(input.value);
+                } else if (input.type === 'radio') {
+                    if (input.checked) formData[input.name] = input.value;
+                } else {
+                    formData[input.name] = input.value;
+                }
+            });
+            
+            return formData;
+        }
+
+        function clearCurrentForm() {
+            const formType = getCurrentFormType();
+            if (formType === 'data') return;
+            
+            if (confirm('Clear all fields in this form?')) {
+                const form = document.getElementById(formType + 'Form');
+                if (form) {
+                    form.reset();
+                    // Reset date to today
+                    const today = new Date().toISOString().split('T')[0];
+                    form.querySelectorAll('input[type="date"]').forEach(input => {
+                        input.value = today;
+                    });
+                }
+            }
+        }
+
+        function saveProgress() {
+            const formData = getCurrentFormData();
+            if (!formData) {
+                alert('No form to save');
+                return;
+            }
+            
+            const formType = getCurrentFormType();
+            localStorage.setItem(`draft_${formType}`, JSON.stringify(formData));
+            alert('Progress saved! You can continue later.');
+        }
+
+        function loadProgress(formType) {
+            const draft = localStorage.getItem(`draft_${formType}`);
+            if (!draft) return;
+            
+            try {
+                const data = JSON.parse(draft);
+                const form = document.getElementById(formType + 'Form');
+                if (!form) return;
+                
+                Object.keys(data).forEach(key => {
+                    const value = data[key];
+                    const inputs = form.querySelectorAll(`[name="${key}"]`);
+                    
+                    inputs.forEach(input => {
+                        if (input.type === 'checkbox') {
+                            if (Array.isArray(value) && value.includes(input.value)) {
+                                input.checked = true;
+                            }
+                        } else if (input.type === 'radio') {
+                            if (input.value === value) {
+                                input.checked = true;
+                            }
+                        } else {
+                            input.value = value;
+                        }
+                    });
+                });
+                
+                console.log('Progress loaded for ' + formType);
+            } catch (e) {
+                console.error('Failed to load progress:', e);
+            }
+        }
+
+        function submitCurrentForm() {
+            const formType = getCurrentFormType();
+            if (formType === 'data') return;
+            
+            const form = document.getElementById(formType + 'Form');
+            if (!form) return;
+            
+            // Validate
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                alert('Please fill all required fields');
+                return;
+            }
+            
+            const formData = getCurrentFormData();
+            
+            // Save to database
+            saveResponse(formType, formData)
+                .then(response => {
+                    alert(`✓ Survey submitted successfully!\nRespondent ID: ${response.respondentId}`);
+                    form.reset();
+                    form.classList.remove('was-validated');
+                    localStorage.removeItem(`draft_${formType}`);
+                    
+                    // Set date to today
+                    const today = new Date().toISOString().split('T')[0];
+                    form.querySelectorAll('input[type="date"]').forEach(input => {
+                        input.value = today;
+                    });
+                })
+                .catch(err => {
+                    console.error('Submit error:', err);
+                    alert('Failed to submit. Please try again.');
+                });
+        }
+
+        // ===== TAB NAVIGATION =====
+        function attachTabListeners() {
+            document.querySelectorAll('[data-tab]').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.getAttribute('data-tab');
+                    currentQuestionnaireType = targetId;
+                    
+                    // Update active tab
+                    document.querySelectorAll('[data-tab]').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Update active content
+                    document.querySelectorAll('.tab-pane').forEach(pane => {
+                        pane.classList.remove('show', 'active');
+                    });
+                    const targetPane = document.getElementById(targetId);
+                    if (targetPane) {
+                        targetPane.classList.add('show', 'active');
+                        
+                        if (targetId === 'data') {
+                            loadDataTable();
+                        } else {
+                            // Load any saved progress
+                            setTimeout(() => loadProgress(targetId), 100);
+                        }
+                    }
+                    
+                    // Re-attach conditional logic
+                    setTimeout(attachConditionalLogic, 100);
+                });
+            });
+        }
+
+        // ===== CONNECTION STATUS =====
+        function updateConnectionStatus() {
+            const statusBadge = document.getElementById('connectionStatus');
+            const statusText = document.getElementById('statusText');
+            
+            if (navigator.onLine) {
+                statusBadge.className = 'status-badge online';
+                statusText.textContent = 'Online';
+                statusBadge.querySelector('i').className = 'bi bi-wifi';
+            } else {
+                statusBadge.className = 'status-badge offline';
+                statusText.textContent = 'Offline';
+                statusBadge.querySelector('i').className = 'bi bi-wifi-off';
+            }
+        }
+
+        window.addEventListener('online', updateConnectionStatus);
+        window.addEventListener('offline', updateConnectionStatus);
+
+        // ===== PWA INSTALL =====
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installPrompt').style.display = 'block';
+        });
+
+        document.getElementById('installBtn')?.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
+            
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log(`Install outcome: ${outcome}`);
+            deferredPrompt = null;
+            document.getElementById('installPrompt').style.display = 'none';
+        });
+
+        // ===== SERVICE WORKER REGISTRATION =====
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('Service Worker registered:', reg))
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
+
+        // ===== INITIALIZE APP =====
+        window.addEventListener('DOMContentLoaded', () => {
+            initDB();
+            renderApp();
+        });
+    </script>
+    
+    <!-- Bootstrap JS (for modals) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

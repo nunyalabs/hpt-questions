@@ -1,0 +1,8 @@
+# Old/backup files
+*_old.*
+*_backup.*
+*_complete.*
+.DS_Store
+node_modules/
+*.swp
+.vscode/
