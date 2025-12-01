@@ -2,7 +2,26 @@
 *_old.*
 *_backup.*
 *_complete.*
+
+# macOS
 .DS_Store
-node_modules/
+.AppleDouble
+.LSOverride
 *.swp
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# IDE
 .vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node
+node_modules/
+
+# OS
+.env.local
+.env.*.local
