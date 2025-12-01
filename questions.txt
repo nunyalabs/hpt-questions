@@ -1,0 +1,1294 @@
+# STRUCTURED QUESTIONNAIRES
+## Personalised Hypertension Management Study - Ghana
+
+---
+
+## QUESTIONNAIRE 1: PATIENTS WITH HYPERTENSION
+
+**Respondent ID:** PAT_____ **Date:** ____/____/2025  
+**Study Site:** _________________ **Interviewer Initials:** _____
+
+### SECTION A: DEMOGRAPHIC INFORMATION
+
+**A1. Age:** _____ years
+
+**A2. Gender:**  
+☐ Male  
+☐ Female  
+☐ Prefer not to say
+
+**A3. Highest level of education completed:**  
+☐ No formal education  
+☐ Primary school  
+☐ Junior High School (JHS)  
+☐ Senior High School (SHS)  
+☐ Tertiary/University  
+☐ Other (specify): __________
+
+**A4. Current employment status:**  
+☐ Employed full-time  
+☐ Employed part-time  
+☐ Self-employed  
+☐ Unemployed  
+☐ Retired  
+☐ Student
+
+**A5. Marital status:**  
+☐ Single  
+☐ Married  
+☐ Divorced/Separated  
+☐ Widowed
+
+### SECTION B: HYPERTENSION DIAGNOSIS & TREATMENT HISTORY
+
+**B1. How long ago were you diagnosed with hypertension?**  
+☐ Less than 6 months  
+☐ 6 months - 1 year  
+☐ 1-3 years  
+☐ 3-5 years  
+☐ More than 5 years
+
+**B2. Where do you usually receive treatment for your hypertension?** *(Select all that apply)*  
+☐ Government hospital/clinic  
+☐ Private hospital/clinic  
+☐ Community health center (CHPS)  
+☐ Pharmacy  
+☐ Herbal practitioner  
+☐ Faith healer/spiritual center  
+☐ Self-medication at home  
+☐ Other (specify): __________
+
+**B3. Are you currently taking prescribed medication for hypertension?**  
+☐ Yes → *Continue to B4*  
+☐ No → *Skip to B6*
+
+**B4. In the past month, how often did you take your prescribed blood pressure medication as directed?**  
+☐ Every day (100%)  
+☐ Most days (75-99%)  
+☐ Sometimes (50-74%)  
+☐ Rarely (25-49%)  
+☐ Never (0-24%)
+
+**B5. What are the main reasons you sometimes miss taking your medication?** *(Select all that apply)*  
+☐ Forget to take it  
+☐ Cost too high  
+☐ Medication finished/not available  
+☐ Side effects  
+☐ Feeling better/no symptoms  
+☐ Distance to health facility  
+☐ Using herbal remedies instead  
+☐ Other (specify): __________
+
+**B6. Do you currently use any herbal or traditional remedies for your blood pressure?**  
+☐ Yes → *Continue to B7*  
+☐ No → *Skip to Section C*
+
+**B7. Which herbal remedies do you use?** *(Select all that apply)*  
+☐ Garlic  
+☐ Ginger  
+☐ Neem leaves  
+☐ Moringa  
+☐ Bitter leaf  
+☐ African star apple (Alasa)  
+☐ Mixture from herbalist  
+☐ Other (specify): __________
+
+**B8. How often do you use these herbal remedies?**  
+☐ Daily  
+☐ Several times per week  
+☐ Once a week  
+☐ Occasionally  
+☐ Only when symptoms worsen
+
+### SECTION C: BELIEFS & ATTITUDES TOWARD TREATMENT
+
+**Rate your level of agreement with each statement:**  
+*Scale: 1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree*
+
+| Statement | 1 | 2 | 3 | 4 | 5 |
+|-----------|---|---|---|---|---|
+| C1. Hospital medications are effective for controlling my blood pressure | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C2. Herbal remedies are effective for controlling my blood pressure | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C3. Combining hospital medicine with herbs could work better than either alone | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C4. I trust my doctor/nurse to make the best treatment decisions for me | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C5. I trust herbal practitioners to treat my blood pressure safely | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C6. Spiritual/religious practices help control blood pressure | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C7. My blood pressure problem is caused by stress and worry | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C8. My blood pressure problem is hereditary (runs in family) | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C9. Diet and exercise can control blood pressure without medication | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C10. I am satisfied with my current blood pressure treatment | ☐ | ☐ | ☐ | ☐ | ☐ |
+
+### SECTION D: COMMUNICATION WITH HEALTHCARE PROVIDERS
+
+**D1. Have you told your doctor/nurse about any herbal remedies you use?**  
+☐ Yes, I told them everything  
+☐ Yes, but only some  
+☐ No, I have not told them  
+☐ Not applicable - I don't use herbs
+
+**D2. If you have NOT told your healthcare provider about using herbs, why not?** *(Select all that apply)*  
+☐ They didn't ask  
+☐ Afraid they would disapprove  
+☐ Don't think it's important  
+☐ Don't think they would understand  
+☐ Not applicable - I told them / don't use herbs
+
+**D3. How comfortable would you feel discussing herbal treatments with your doctor/nurse?**  
+☐ Very comfortable  
+☐ Somewhat comfortable  
+☐ Neutral  
+☐ Somewhat uncomfortable  
+☐ Very uncomfortable
+
+### SECTION E: BARRIERS TO HYPERTENSION MANAGEMENT
+
+**Rate how much each factor affects your ability to manage your blood pressure:**  
+*Scale: 1 = Not at all, 2 = A little, 3 = Moderately, 4 = Quite a lot, 5 = Extremely*
+
+| Barrier | 1 | 2 | 3 | 4 | 5 |
+|---------|---|---|---|---|---|
+| E1. Cost of medications | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E2. Cost of clinic visits | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E3. Distance to health facility | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E4. Transport costs | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E5. Long waiting times at clinic | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E6. Medication side effects | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E7. Forgetting to take medication | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E8. Work/family commitments | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E9. Medication not available at pharmacy | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E10. Not understanding treatment instructions | ☐ | ☐ | ☐ | ☐ | ☐ |
+
+### SECTION F: DIGITAL HEALTH & PERSONALIZED TREATMENT
+
+**F1. Do you own a smartphone?**  
+☐ Yes → *Continue to F2*  
+☐ No → *Skip to F4*
+
+**F2. How comfortable are you using smartphone apps?**  
+☐ Very comfortable - I use many apps daily  
+☐ Comfortable - I use a few apps regularly  
+☐ Neutral - I can use apps if taught  
+☐ Uncomfortable - I rarely use apps  
+☐ Very uncomfortable - I find apps difficult
+
+**F3. Have you ever used a mobile health app (for tracking health information)?**  
+☐ Yes  
+☐ No
+
+**F4. Would you be willing to use a mobile app to track your blood pressure, medications, and symptoms daily?**  
+☐ Very willing  
+☐ Somewhat willing  
+☐ Neutral  
+☐ Somewhat unwilling  
+☐ Very unwilling
+
+**F5. Would you be interested in participating in a study where different treatments are tried over time to find what works best for YOU specifically?**  
+☐ Very interested  
+☐ Somewhat interested  
+☐ Neutral  
+☐ Somewhat uninterested  
+☐ Very uninterested
+
+**F6. If a mobile app could help identify which treatment (hospital medicine, herbs, or combination) works best for you personally, how valuable would that be?**  
+☐ Extremely valuable  
+☐ Very valuable  
+☐ Moderately valuable  
+☐ Slightly valuable  
+☐ Not at all valuable
+
+### SECTION G: OPENNESS TO INTEGRATIVE CARE
+
+**G1. If your doctor recommended combining prescribed medication with specific herbal remedies, would you follow this advice?**  
+☐ Definitely yes  
+☐ Probably yes  
+☐ Unsure  
+☐ Probably no  
+☐ Definitely no
+
+**G2. Would you be comfortable if your doctor and a trained herbal practitioner worked together to manage your blood pressure?**  
+☐ Very comfortable  
+☐ Somewhat comfortable  
+☐ Neutral  
+☐ Somewhat uncomfortable  
+☐ Very uncomfortable
+
+**G3. What concerns, if any, would you have about combining hospital medicine with herbal treatments?** *(Select all that apply)*  
+☐ Safety/harmful interactions  
+☐ Effectiveness might be reduced  
+☐ Too complicated to manage  
+☐ Increased cost  
+☐ What family/community might think  
+☐ Religious/cultural concerns  
+☐ No concerns  
+☐ Other (specify): __________
+
+---
+
+## QUESTIONNAIRE 2: CLINICIANS
+
+**Respondent ID:** CLN_____ **Date:** ____/____/2025  
+**Facility:** _________________ **Interviewer Initials:** _____
+
+### SECTION A: PROFESSIONAL BACKGROUND
+
+**A1. Professional role:**  
+☐ Medical Doctor/Physician  
+☐ Nurse  
+☐ Physician Assistant  
+☐ Pharmacist  
+☐ Other (specify): __________
+
+**A2. Years of experience in healthcare:**  
+☐ Less than 1 year  
+☐ 1-3 years  
+☐ 4-6 years  
+☐ 7-10 years  
+☐ More than 10 years
+
+**A3. Years of experience managing hypertensive patients:**  
+☐ Less than 6 months  
+☐ 6 months - 1 year  
+☐ 1-3 years  
+☐ 3-5 years  
+☐ More than 5 years
+
+**A4. Type of health facility where you primarily work:**  
+☐ Teaching hospital  
+☐ Regional hospital  
+☐ District hospital  
+☐ Polyclinic  
+☐ Health center  
+☐ CHPS compound  
+☐ Private clinic  
+☐ Other (specify): __________
+
+**A5. On average, how many hypertensive patients do you see per week?**  
+☐ 1-5  
+☐ 6-10  
+☐ 11-20  
+☐ 21-50  
+☐ More than 50
+
+### SECTION B: CURRENT TREATMENT PRACTICES
+
+**B1. What are your most commonly prescribed first-line medications for uncomplicated hypertension?** *(Select up to 3)*  
+☐ ACE inhibitors (e.g., Lisinopril, Enalapril)  
+☐ Angiotensin II receptor blockers/ARBs (e.g., Losartan)  
+☐ Calcium channel blockers (e.g., Amlodipine, Nifedipine)  
+☐ Thiazide diuretics (e.g., Hydrochlorothiazide)  
+☐ Beta-blockers (e.g., Atenolol, Propranolol)  
+☐ Other (specify): __________
+
+**B2. In your experience, what percentage of your hypertensive patients achieve adequate blood pressure control (BP <140/90 mmHg)?**  
+☐ Less than 25%  
+☐ 25-49%  
+☐ 50-74%  
+☐ 75-89%  
+☐ 90% or more
+
+**B3. What do you estimate is the medication adherence rate among your hypertensive patients?**  
+☐ Less than 25%  
+☐ 25-49%  
+☐ 50-74%  
+☐ 75-89%  
+☐ 90% or more
+
+### SECTION C: OBSERVATIONS OF PATIENT BEHAVIORS
+
+**C1. What percentage of your hypertensive patients have disclosed to you that they use herbal or traditional remedies?**  
+☐ None (0%)  
+☐ Very few (1-10%)  
+☐ Some (11-30%)  
+☐ Many (31-60%)  
+☐ Most (61-100%)
+
+**C2. How often do you routinely ask patients about their use of herbal or traditional remedies?**  
+☐ Always (with every hypertensive patient)  
+☐ Often (with most patients)  
+☐ Sometimes (with some patients)  
+☐ Rarely (only when I suspect use)  
+☐ Never
+
+**C3. What are the most common reasons your patients give for poor medication adherence?** *(Select all that apply)*  
+☐ Cost of medications  
+☐ Side effects  
+☐ Forgetfulness  
+☐ Medication not available  
+☐ Feeling better/asymptomatic  
+☐ Preferring herbal remedies  
+☐ Distance to facility  
+☐ Cultural/religious beliefs  
+☐ Lack of understanding of condition  
+☐ Other (specify): __________
+
+### SECTION D: KNOWLEDGE & ATTITUDES TOWARD HERBAL MEDICINE
+
+**Rate your level of agreement with each statement:**  
+*Scale: 1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree*
+
+| Statement | 1 | 2 | 3 | 4 | 5 |
+|-----------|---|---|---|---|---|
+| D1. Some herbal remedies may have antihypertensive effects | ☐ | ☐ | ☐ | ☐ | ☐ |
+| D2. Herbal medicines can be safely used alongside conventional BP medications | ☐ | ☐ | ☐ | ☐ | ☐ |
+| D3. There is insufficient scientific evidence about herbal medicines for hypertension | ☐ | ☐ | ☐ | ☐ | ☐ |
+| D4. Herbal medicines may cause harmful drug interactions | ☐ | ☐ | ☐ | ☐ | ☐ |
+| D5. Patients should inform healthcare providers about all herbal remedies they use | ☐ | ☐ | ☐ | ☐ | ☐ |
+| D6. I feel adequately trained to advise patients about herbal medicines | ☐ | ☐ | ☐ | ☐ | ☐ |
+| D7. Herbal practitioners have valuable knowledge about treating hypertension | ☐ | ☐ | ☐ | ☐ | ☐ |
+| D8. Patients' cultural beliefs should be respected in treatment planning | ☐ | ☐ | ☐ | ☐ | ☐ |
+
+### SECTION E: ATTITUDES TOWARD INTEGRATIVE CARE
+
+**E1. How open would you be to formally integrating validated herbal treatments into hypertension management protocols?**  
+☐ Very open  
+☐ Somewhat open  
+☐ Neutral  
+☐ Somewhat resistant  
+☐ Very resistant
+
+**E2. Would you be willing to collaborate with trained herbal practitioners in a co-management model for hypertension?**  
+☐ Definitely yes  
+☐ Probably yes  
+☐ Unsure  
+☐ Probably no  
+☐ Definitely no
+
+**E3. What would be your main concerns about integrative hypertension care?** *(Select all that apply)*  
+☐ Safety and drug interactions  
+☐ Lack of standardization of herbal products  
+☐ Insufficient scientific evidence  
+☐ Legal/professional liability  
+☐ Lack of training/guidelines  
+☐ Time constraints  
+☐ Patient safety monitoring  
+☐ Professional credibility concerns  
+☐ No major concerns  
+☐ Other (specify): __________
+
+**E4. What would you need to feel comfortable recommending integrative approaches?** *(Select all that apply)*  
+☐ Clinical practice guidelines  
+☐ Training on herb-drug interactions  
+☐ Evidence from clinical trials  
+☐ Standardized herbal products  
+☐ Clear regulatory framework  
+☐ Collaboration protocols with herbalists  
+☐ Monitoring/reporting systems  
+☐ Professional indemnity coverage  
+☐ Other (specify): __________
+
+### SECTION F: DIGITAL HEALTH & PERSONALIZED CARE
+
+**F1. How comfortable are you using digital health technologies in your clinical practice?**  
+☐ Very comfortable  
+☐ Somewhat comfortable  
+☐ Neutral  
+☐ Somewhat uncomfortable  
+☐ Very uncomfortable
+
+**F2. Have you ever used digital platforms to monitor patient data or treatment outcomes?**  
+☐ Yes, regularly  
+☐ Yes, occasionally  
+☐ No, but interested  
+☐ No, and not interested
+
+**F3. How feasible would it be to use a digital dashboard to monitor individual patients' responses to different treatment sequences?**  
+☐ Very feasible  
+☐ Somewhat feasible  
+☐ Neutral  
+☐ Somewhat unfeasible  
+☐ Very unfeasible
+
+**F4. What would be the main barriers to implementing digital N-of-1 trials in your practice?** *(Select all that apply)*  
+☐ Time constraints  
+☐ Lack of training  
+☐ Poor internet connectivity  
+☐ Lack of devices  
+☐ Patient digital literacy  
+☐ Workload already too high  
+☐ Lack of institutional support  
+☐ Cost  
+☐ No major barriers  
+☐ Other (specify): __________
+
+**F5. How valuable would personalized treatment data be for improving hypertension management in your patients?**  
+☐ Extremely valuable  
+☐ Very valuable  
+☐ Moderately valuable  
+☐ Slightly valuable  
+☐ Not at all valuable
+
+### SECTION G: HEALTH SYSTEM CONSTRAINTS
+
+**Rate how much each factor limits your ability to provide optimal hypertension care:**  
+*Scale: 1 = Not at all, 2 = A little, 3 = Moderately, 4 = Quite a lot, 5 = Extremely*
+
+| Constraint | 1 | 2 | 3 | 4 | 5 |
+|------------|---|---|---|---|---|
+| G1. Limited time per patient | ☐ | ☐ | ☐ | ☐ | ☐ |
+| G2. Medication stockouts | ☐ | ☐ | ☐ | ☐ | ☐ |
+| G3. Lack of BP monitoring equipment | ☐ | ☐ | ☐ | ☐ | ☐ |
+| G4. Inadequate laboratory services | ☐ | ☐ | ☐ | ☐ | ☐ |
+| G5. Patient financial constraints | ☐ | ☐ | ☐ | ☐ | ☐ |
+| G6. Insufficient continuing education opportunities | ☐ | ☐ | ☐ | ☐ | ☐ |
+| G7. Poor patient follow-up systems | ☐ | ☐ | ☐ | ☐ | ☐ |
+| G8. Limited specialist referral options | ☐ | ☐ | ☐ | ☐ | ☐ |
+
+---
+
+## QUESTIONNAIRE 3: HERBAL PRACTITIONERS
+
+**Respondent ID:** HRB_____ **Date:** ____/____/2025  
+**Location:** _________________ **Interviewer Initials:** _____
+
+### SECTION A: PRACTITIONER BACKGROUND
+
+**A1. Age:** _____ years
+
+**A2. Gender:**  
+☐ Male  
+☐ Female  
+☐ Prefer not to say
+
+**A3. Highest level of formal education:**  
+☐ No formal education  
+☐ Primary school  
+☐ Junior High School (JHS)  
+☐ Senior High School (SHS)  
+☐ Tertiary/University  
+☐ Other (specify): __________
+
+**A4. How did you learn herbal medicine?** *(Select all that apply)*  
+☐ Family tradition (inherited knowledge)  
+☐ Apprenticeship with herbalist  
+☐ Formal training program  
+☐ Self-taught/personal study  
+☐ Spiritual calling/revelation  
+☐ Other (specify): __________
+
+**A5. Are you registered with the Centre for Plant Medicine Research (CPMR) or Traditional Medicine Practice Council (TMPC)?**  
+☐ Yes - CPMR  
+☐ Yes - TMPC  
+☐ Yes - Both  
+☐ No, but planning to register  
+☐ No
+
+**A6. How many years have you been practicing herbal medicine?**  
+☐ Less than 1 year  
+☐ 1-3 years  
+☐ 4-6 years  
+☐ 7-10 years  
+☐ More than 10 years
+
+**A7. How many years have you been treating patients with hypertension specifically?**  
+☐ Less than 6 months  
+☐ 6 months - 1 year  
+☐ 1-3 years  
+☐ 3-5 years  
+☐ More than 5 years
+
+### SECTION B: PRACTICE CHARACTERISTICS
+
+**B1. Where do you primarily practice?**  
+☐ Own herbal clinic/shop  
+☐ Market stall  
+☐ Mobile practice (travel to patients)  
+☐ Home-based  
+☐ Traditional medicine hospital  
+☐ Other (specify): __________
+
+**B2. On average, how many patients with hypertension do you treat per week?**  
+☐ 1-5  
+☐ 6-10  
+☐ 11-20  
+☐ 21-50  
+☐ More than 50
+
+**B3. What other health conditions do you commonly treat?** *(Select all that apply)*  
+☐ Diabetes  
+☐ Arthritis/joint pain  
+☐ Stomach problems  
+☐ Respiratory conditions  
+☐ Skin diseases  
+☐ Infertility  
+☐ Mental health issues  
+☐ General wellness  
+☐ Other (specify): __________
+
+### SECTION C: TREATMENT PRACTICES FOR HYPERTENSION
+
+**C1. Which herbal remedies do you commonly use for treating hypertension?** *(Select all that apply)*  
+☐ Garlic (*Allium sativum*)  
+☐ Ginger (*Zingiber officinale*)  
+☐ Neem (*Azadirachta indica*)  
+☐ Moringa (*Moringa oleifera*)  
+☐ Bitter leaf (*Vernonia amygdalina*)  
+☐ African star apple/Alasa (*Chrysophyllum albidum*)  
+☐ Prekese (*Tetrapleura tetraptera*)  
+☐ Baobab (*Adansonia digitata*)  
+☐ Hibiscus  
+☐ Other (specify): __________
+
+**C2. In what form do you typically prepare these remedies?** *(Select all that apply)*  
+☐ Decoction (boiling in water)  
+☐ Infusion (steeping/tea)  
+☐ Powder  
+☐ Tincture  
+☐ Raw/fresh form  
+☐ Mixed formulation  
+☐ Other (specify): __________
+
+**C3. How do you determine the dosage for each patient?**  
+☐ Standard dose for all patients  
+☐ Based on patient's age  
+☐ Based on patient's body size/weight  
+☐ Based on severity of symptoms  
+☐ Spiritual guidance  
+☐ Trial and adjustment  
+☐ Other (specify): __________
+
+**C4. How do you monitor if the treatment is working?**  
+☐ Patient reports feeling better  
+☐ Patient measures BP at clinic/pharmacy and tells me  
+☐ I measure BP myself  
+☐ Reduction in symptoms  
+☐ Spiritual confirmation  
+☐ Other (specify): __________
+
+**C5. What percentage of your hypertensive patients show improvement with your treatment?**  
+☐ Less than 25%  
+☐ 25-49%  
+☐ 50-74%  
+☐ 75-89%  
+☐ 90% or more  
+☐ Don't know
+
+### SECTION D: INTERACTIONS WITH CONVENTIONAL MEDICINE
+
+**D1. What percentage of your hypertensive patients also use hospital medications?**  
+☐ None (0%)  
+☐ Very few (1-10%)  
+☐ Some (11-30%)  
+☐ Many (31-60%)  
+☐ Most (61-100%)  
+☐ Don't know
+
+**D2. When patients tell you they're also taking hospital medicine, what do you advise?** *(Select all that apply)*  
+☐ Continue both treatments  
+☐ Stop hospital medicine and use only herbs  
+☐ Use herbs and hospital medicine at different times  
+☐ Reduce hospital medicine dosage  
+☐ Consult with their doctor  
+☐ I don't advise - let patient decide  
+☐ Other (specify): __________
+
+**D3. Do you refer patients to hospitals/clinics for any reason?**  
+☐ Yes, regularly  
+☐ Yes, occasionally  
+☐ Rarely  
+☐ Never
+
+**D4. If YES, what are common reasons for referral?** *(Select all that apply)*  
+☐ Patient not improving with herbal treatment  
+☐ Very severe symptoms  
+☐ Need for blood tests/diagnostics  
+☐ Complications developing  
+☐ Patient request  
+☐ Other (specify): __________  
+☐ Not applicable - I don't refer
+
+### SECTION E: BELIEFS & ATTITUDES
+
+**Rate your level of agreement with each statement:**  
+*Scale: 1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree*
+
+| Statement | 1 | 2 | 3 | 4 | 5 |
+|-----------|---|---|---|---|---|
+| E1. Herbal medicines are more effective than hospital drugs for hypertension | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E2. Herbal medicines are safer than hospital drugs | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E3. Combining herbs with hospital drugs could be more effective than either alone | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E4. Hospital doctors respect traditional herbal medicine | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E5. I would welcome collaboration with hospital clinicians | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E6. Hypertension is partly caused by spiritual factors | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E7. Some hypertension cases require both herbal and hospital treatment | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E8. I have adequate knowledge to treat hypertension safely | ☐ | ☐ | ☐ | ☐ | ☐ |
+
+### SECTION F: OPENNESS TO COLLABORATION & RESEARCH
+
+**F1. Would you be willing to work with hospital doctors in a shared-care model for hypertensive patients?**  
+☐ Very willing  
+☐ Somewhat willing  
+☐ Neutral  
+☐ Somewhat unwilling  
+☐ Very unwilling
+
+**F2. What would make collaboration easier for you?** *(Select all that apply)*  
+☐ Mutual respect from clinicians  
+☐ Clear referral protocols  
+☐ Joint training workshops  
+☐ Financial compensation/incentives  
+☐ Recognition by health system  
+☐ Standardized treatment guidelines  
+☐ Communication platform with clinicians  
+☐ Other (specify): __________
+
+**F3. How comfortable would you be documenting patient data using a mobile phone app or digital system?**  
+☐ Very comfortable  
+☐ Somewhat comfortable  
+☐ Neutral  
+☐ Somewhat uncomfortable  
+☐ Very uncomfortable
+
+**F4. Would you be interested in participating in research to evaluate the effectiveness of herbal treatments?**  
+☐ Very interested  
+☐ Somewhat interested  
+☐ Neutral  
+☐ Somewhat uninterested  
+☐ Very uninterested
+
+**F5. What concerns, if any, would you have about participating in formal research?** *(Select all that apply)*  
+☐ Time commitment  
+☐ Sharing proprietary knowledge/formulas  
+☐ Government regulation/control  
+☐ Documentation burden  
+☐ Financial costs  
+☐ Distrust of researchers  
+☐ No concerns  
+☐ Other (specify): __________
+
+### SECTION G: TRAINING & CAPACITY NEEDS
+
+**G1. What additional training would be most useful for your practice?** *(Select all that apply)*  
+☐ Blood pressure measurement techniques  
+☐ Recognition of hypertensive complications  
+☐ Safe herb-drug interactions  
+☐ Standardized dosing guidelines  
+☐ Record-keeping and documentation  
+☐ Patient counseling skills  
+☐ Business management  
+☐ Digital literacy  
+☐ Other (specify): __________
+
+---
+
+## QUESTIONNAIRE 4: CAREGIVERS
+
+**Respondent ID:** CG_____ **Date:** ____/____/2025  
+**Location:** _________________ **Interviewer Initials:** _____
+
+### SECTION A: CAREGIVER DEMOGRAPHICS
+
+**A1. Age:** _____ years
+
+**A2. Gender:**  
+☐ Male  
+☐ Female  
+☐ Prefer not to say
+
+**A3. Relationship to patient:**  
+☐ Spouse/Partner  
+☐ Adult child  
+☐ Parent  
+☐ Sibling  
+☐ Other family member  
+☐ Friend  
+☐ Paid caregiver  
+☐ Other (specify): __________
+
+**A4. How long have you been providing care?**  
+☐ Less than 6 months  
+☐ 6 months - 1 year  
+☐ 1-2 years  
+☐ 3-5 years  
+☐ More than 5 years
+
+**A5. Do you live with the person you care for?**  
+☐ Yes, in same household  
+☐ No, but visit daily  
+☐ No, visit several times per week  
+☐ No, visit weekly  
+☐ No, visit less than weekly
+
+**A6. Highest level of education:**  
+☐ No formal education  
+☐ Primary school  
+☐ Junior High School (JHS)  
+☐ Senior High School (SHS)  
+☐ Tertiary/University  
+☐ Other (specify): __________
+
+### SECTION B: CAREGIVING ACTIVITIES
+
+**B1. What caregiving tasks do you perform?** *(Select all that apply)*  
+☐ Remind to take medications  
+☐ Help obtain medications from pharmacy  
+☐ Accompany to clinic appointments  
+☐ Measure blood pressure at home  
+☐ Prepare special meals/diet  
+☐ Prepare herbal remedies  
+☐ Provide emotional support  
+☐ Provide financial support for treatment  
+☐ Monitor symptoms  
+☐ Other (specify): __________
+
+**B2. On average, how many hours per week do you spend on caregiving activities?**  
+☐ Less than 5 hours  
+☐ 5-10 hours  
+☐ 11-20 hours  
+☐ 21-40 hours  
+☐ More than 40 hours (full-time)
+
+**B3. Are you involved in decisions about the patient's treatment?**  
+☐ Yes, very involved  
+☐ Somewhat involved  
+☐ Minimally involved  
+☐ Not involved at all
+
+### SECTION C: KNOWLEDGE & BELIEFS ABOUT HYPERTENSION
+
+**C1. How would you rate your understanding of hypertension?**  
+☐ Very good understanding  
+☐ Good understanding  
+☐ Fair understanding  
+☐ Poor understanding  
+☐ No understanding
+
+**C2. What do you believe are the main causes of your relative's high blood pressure?** *(Select all that apply)*  
+☐ Hereditary/family history  
+☐ Diet (too much salt, fat)  
+☐ Stress and worry  
+☐ Lack of exercise  
+☐ Old age  
+☐ Spiritual/supernatural causes  
+☐ God's will  
+☐ Don't know  
+☐ Other (specify): __________
+
+**Rate your level of agreement with each statement:**  
+*Scale: 1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree*
+
+| Statement | 1 | 2 | 3 | 4 | 5 |
+|-----------|---|---|---|---|---|
+| C3. Hypertension is a serious condition that needs lifelong treatment | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C4. My relative can feel when their blood pressure is high | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C5. If BP is controlled, medications can be stopped | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C6. Diet and exercise alone can control blood pressure | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C7. Prayer and faith can cure hypertension | ☐ | ☐ | ☐ | ☐ | ☐ |
+
+### SECTION D: TREATMENT PREFERENCES & PRACTICES
+
+**D1. What treatments does your relative currently use?** *(Select all that apply)*  
+☐ Prescribed hospital medications  
+☐ Herbal remedies  
+☐ Dietary modifications  
+☐ Exercise  
+☐ Prayer/spiritual healing  
+☐ Over-the-counter medications  
+☐ Traditional healers  
+☐ Don't know  
+☐ Other (specify): __________
+
+**D2. Which treatment do you personally trust most for controlling blood pressure?**  
+☐ Hospital prescribed medications  
+☐ Herbal remedies  
+☐ Combination of hospital drugs and herbs  
+☐ Prayer/spiritual intervention  
+☐ Lifestyle changes (diet/exercise)  
+☐ Don't know
+
+**D3. If you had to choose, which would you prioritize if resources were limited?**  
+☐ Hospital medications  
+☐ Herbal remedies  
+☐ Both equally important
+
+**D4. Does your relative use herbal remedies for blood pressure?**  
+☐ Yes, regularly  
+☐ Yes, occasionally  
+☐ No  
+☐ Don't know
+
+**D5. If YES, are you aware of what specific herbs they use?**  
+☐ Yes, I know all herbs used  
+☐ Yes, I know some  
+☐ No, I don't know  
+☐ Not applicable
+
+**D6. Have you personally prepared or given herbal remedies to your relative?**  
+☐ Yes, regularly  
+☐ Yes, occasionally  
+☐ No, but I would if needed  
+☐ No, and would not do so
+
+### SECTION E: INTERACTIONS WITH HEALTHCARE SYSTEM
+
+**E1. How often do you accompany your relative to clinic appointments?**  
+☐ Always  
+☐ Most of the time  
+☐ Sometimes  
+☐ Rarely  
+☐ Never
+
+**E2. Has your relative ever told their doctor/nurse about using herbal remedies?**  
+☐ Yes  
+☐ No  
+☐ Don't know
+
+**E3. If NO, why do you think they didn't tell the healthcare provider?** *(Select all that apply)*  
+☐ Provider didn't ask  
+☐ Fear of disapproval  
+☐ Don't think it's important  
+☐ Think provider wouldn't understand  
+☐ Don't know  
+☐ Not applicable - they did tell  
+☐ Other (specify): __________
+
+**E4. How would you rate the quality of care your relative receives at the health facility?**  
+☐ Excellent  
+☐ Good  
+☐ Fair  
+☐ Poor  
+☐ Very poor
+
+**E5. What are the biggest challenges in getting healthcare for your relative?** *(Select up to 3)*  
+☐ Cost of medications  
+☐ Cost of clinic visits  
+☐ Distance to health facility  
+☐ Transport costs  
+☐ Long waiting times  
+☐ Medications not available  
+☐ Poor treatment by staff  
+☐ Difficulty getting appointments  
+☐ Work/family commitments  
+☐ No major challenges  
+☐ Other (specify): __________
+
+### SECTION F: ATTITUDES TOWARD INTEGRATIVE CARE
+
+**F1. If a doctor recommended combining hospital medicine with specific herbal treatments, would you support your relative trying this?**  
+☐ Definitely yes  
+☐ Probably yes  
+☐ Unsure  
+☐ Probably no  
+☐ Definitely no
+
+**F2. Would you feel comfortable if a doctor and herbal practitioner worked together to manage your relative's blood pressure?**  
+☐ Very comfortable  
+☐ Somewhat comfortable  
+☐ Neutral  
+☐ Somewhat uncomfortable  
+☐ Very uncomfortable
+
+**F3. What concerns would you have about combining treatments?** *(Select all that apply)*  
+☐ Safety - might cause harmful effects  
+☐ Effectiveness might be reduced  
+☐ Too complicated to manage  
+☐ Increased cost  
+☐ What family/community might think  
+☐ Religious concerns  
+☐ Don't trust herbal practitioners  
+☐ No concerns  
+☐ Other (specify): __________
+
+**Rate your agreement:**  
+*Scale: 1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree*
+
+| Statement | 1 | 2 | 3 | 4 | 5 |
+|-----------|---|---|---|---|---|
+| F4. Hospital medicines are more effective than herbs | ☐ | ☐ | ☐ | ☐ | ☐ |
+| F5. Herbs are safer with fewer side effects | ☐ | ☐ | ☐ | ☐ | ☐ |
+| F6. Both hospital medicine and herbs have their place | ☐ | ☐ | ☐ | ☐ | ☐ |
+| F7. Doctors should be more open to traditional medicine | ☐ | ☐ | ☐ | ☐ | ☐ |
+
+### SECTION G: DIGITAL HEALTH & SUPPORT NEEDS
+
+**G1. Do you own a smartphone?**  
+☐ Yes  
+☐ No
+
+**G2. Would you be willing to use a mobile app to help track your relative's blood pressure, medications, and symptoms?**  
+☐ Very willing  
+☐ Somewhat willing  
+☐ Neutral  
+☐ Somewhat unwilling  
+☐ Very unwilling
+
+**G3. How comfortable are you with using smartphone apps?**  
+☐ Very comfortable  
+☐ Comfortable  
+☐ Neutral  
+☐ Uncomfortable  
+☐ Very uncomfortable
+
+**G4. Would you be interested in a study that tests different treatments to find what works best for your relative?**  
+☐ Very interested  
+☐ Somewhat interested  
+☐ Neutral  
+☐ Not very interested  
+☐ Not at all interested
+
+**G5. What kind of support would help you care for your relative better?** *(Select all that apply)*  
+☐ Better information about hypertension  
+☐ Training on medication management  
+☐ Financial support for treatment costs  
+☐ Transport assistance  
+☐ Home BP monitoring equipment  
+☐ Caregiver support groups  
+☐ Respite care services  
+☐ Mobile app for tracking treatment  
+☐ Direct contact with healthcare provider  
+☐ Other (specify): __________
+
+### SECTION H: CAREGIVER BURDEN
+
+**Rate how often you experience each feeling:**  
+*Scale: 1 = Never, 2 = Rarely, 3 = Sometimes, 4 = Often, 5 = Always*
+
+| Statement | 1 | 2 | 3 | 4 | 5 |
+|-----------|---|---|---|---|---|
+| H1. I feel overwhelmed by caregiving responsibilities | ☐ | ☐ | ☐ | ☐ | ☐ |
+| H2. Caregiving affects my own health | ☐ | ☐ | ☐ | ☐ | ☐ |
+| H3. I worry about my relative's health constantly | ☐ | ☐ | ☐ | ☐ | ☐ |
+| H4. I have enough support from family/friends | ☐ | ☐ | ☐ | ☐ | ☐ |
+| H5. Caregiving causes financial strain | ☐ | ☐ | ☐ | ☐ | ☐ |
+| H6. I feel confident in my caregiving abilities | ☐ | ☐ | ☐ | ☐ | ☐ |
+
+---
+
+## QUESTIONNAIRE 5: POLICYMAKERS & HEALTH SYSTEM STAKEHOLDERS
+
+**Respondent ID:** POL_____ **Date:** ____/____/2025  
+**Organization:** _________________ **Interviewer Initials:** _____
+
+### SECTION A: PROFESSIONAL BACKGROUND
+
+**A1. Current position/role:**  
+☐ Regional/District Health Director  
+☐ Ministry of Health official  
+☐ Ghana Health Service administrator  
+☐ Policy analyst/advisor  
+☐ Traditional Medicine Practice Council member  
+☐ Health insurance official  
+☐ NCD program coordinator  
+☐ Academic/researcher in health policy  
+☐ Other (specify): __________
+
+**A2. Years in current role:**  
+☐ Less than 1 year  
+☐ 1-3 years  
+☐ 4-6 years  
+☐ 7-10 years  
+☐ More than 10 years
+
+**A3. Total years of experience in health sector:**  
+☐ Less than 5 years  
+☐ 5-10 years  
+☐ 11-15 years  
+☐ 16-20 years  
+☐ More than 20 years
+
+**A4. Primary area of responsibility:** *(Select all that apply)*  
+☐ Policy development  
+☐ Program implementation  
+☐ Health financing/insurance  
+☐ Service delivery  
+☐ Regulation/quality assurance  
+☐ Research and M&E  
+☐ Traditional/complementary medicine  
+☐ Non-communicable diseases  
+☐ Digital health/eHealth  
+☐ Other (specify): __________
+
+### SECTION B: PERSPECTIVES ON HYPERTENSION BURDEN
+
+**B1. How would you rate hypertension as a public health priority in Ghana?**  
+☐ Critical priority  
+☐ High priority  
+☐ Moderate priority  
+☐ Low priority  
+☐ Not a priority
+
+**B2. In your view, what percentage of hypertensive patients in Ghana achieve adequate blood pressure control?**  
+☐ Less than 25%  
+☐ 25-49%  
+☐ 50-74%  
+☐ 75% or more  
+☐ Don't know
+
+**B3. What are the biggest health system barriers to effective hypertension management?** *(Select up to 3)*  
+☐ Medication stockouts/supply chain  
+☐ High patient costs  
+☐ Limited human resources  
+☐ Weak referral systems  
+☐ Poor patient follow-up mechanisms  
+☐ Inadequate diagnostic equipment  
+☐ Insufficient training of providers  
+☐ Weak health information systems  
+☐ Limited public awareness  
+☐ Other (specify): __________
+
+### SECTION C: TRADITIONAL/COMPLEMENTARY MEDICINE POLICY
+
+**C1. Are you familiar with Ghana's Traditional Medicine Policy?**  
+☐ Very familiar  
+☐ Somewhat familiar  
+☐ Slightly familiar  
+☐ Not familiar at all
+
+**C2. In your opinion, how well integrated is traditional medicine into the formal health system currently?**  
+☐ Very well integrated  
+☐ Moderately integrated  
+☐ Poorly integrated  
+☐ Not integrated at all  
+☐ Don't know
+
+**C3. Should traditional/herbal medicine play a larger role in hypertension management?**  
+☐ Definitely yes  
+☐ Probably yes  
+☐ Unsure  
+☐ Probably no  
+☐ Definitely no
+
+**Rate your agreement:**  
+*Scale: 1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree*
+
+| Statement | 1 | 2 | 3 | 4 | 5 |
+|-----------|---|---|---|---|---|
+| C4. Traditional medicine has evidence-based benefits for hypertension | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C5. Herbal practitioners should be formally integrated into primary healthcare teams | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C6. Current regulations for herbal medicines are adequate | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C7. More research is needed on safety/efficacy of herbal treatments | ☐ | ☐ | ☐ | ☐ | ☐ |
+| C8. Patients should be able to choose between conventional and traditional care | ☐ | ☐ | ☐ | ☐ | ☐ |
+
+### SECTION D: ATTITUDES TOWARD INTEGRATIVE CARE MODELS
+
+**D1. How feasible would it be to implement formal integrative care (combining conventional and traditional medicine) for hypertension in Ghana?**  
+☐ Very feasible  
+☐ Somewhat feasible  
+☐ Neutral  
+☐ Somewhat unfeasible  
+☐ Very unfeasible
+
+**D2. What would be the main benefits of integrative hypertension care?** *(Select all that apply)*  
+☐ Improved patient satisfaction  
+☐ Better treatment adherence  
+☐ Culturally appropriate care  
+☐ Increased access to care  
+☐ Reduced costs  
+☐ Better health outcomes  
+☐ Reduced medication side effects  
+☐ No significant benefits  
+☐ Other (specify): __________
+
+**D3. What would be the main challenges?** *(Select all that apply)*  
+☐ Safety concerns/herb-drug interactions  
+☐ Lack of standardization  
+☐ Insufficient evidence base  
+☐ Resistance from conventional providers  
+☐ Regulatory gaps  
+☐ Quality control of herbal products  
+☐ Training requirements  
+☐ Funding constraints  
+☐ Monitoring and evaluation difficulties  
+☐ Professional liability issues  
+☐ Other (specify): __________
+
+**D4. What policy changes would be needed to support integrative hypertension care?** *(Select all that apply)*  
+☐ National integrative care guidelines  
+☐ Standardized training curricula  
+☐ Herbal medicine quality standards  
+☐ Revised scope of practice regulations  
+☐ NHIS coverage of herbal treatments  
+☐ Collaborative practice frameworks  
+☐ Adverse event reporting systems  
+☐ Research funding mechanisms  
+☐ Public education campaigns  
+☐ Other (specify): __________
+
+### SECTION E: DIGITAL HEALTH & INNOVATION
+
+**E1. How familiar are you with digital health innovations for chronic disease management?**  
+☐ Very familiar  
+☐ Somewhat familiar  
+☐ Slightly familiar  
+☐ Not familiar at all
+
+**E2. Are you aware of N-of-1 trials (personalized single-patient experiments)?**  
+☐ Yes, very familiar  
+☐ Yes, somewhat familiar  
+☐ Heard of it but not familiar  
+☐ No, not aware
+
+**E3. How promising do you think digital N-of-1 trials could be for hypertension management in Ghana?**  
+☐ Very promising  
+☐ Somewhat promising  
+☐ Neutral  
+☐ Not very promising  
+☐ Not at all promising  
+☐ Don't know enough to say
+
+**E4. What would be the main barriers to implementing digital health solutions for hypertension?** *(Select all that apply)*  
+☐ Limited digital infrastructure  
+☐ Low digital literacy  
+☐ Data privacy/security concerns  
+☐ Cost of technology  
+☐ Lack of policy frameworks  
+☐ Resistance from providers  
+☐ Inadequate technical support  
+☐ Intermittent power supply  
+☐ No major barriers  
+☐ Other (specify): __________
+
+**Rate your agreement:**  
+*Scale: 1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree*
+
+| Statement | 1 | 2 | 3 | 4 | 5 |
+|-----------|---|---|---|---|---|
+| E5. Digital health should be prioritized in NCD management | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E6. Mobile health apps can improve medication adherence | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E7. Ghana's digital infrastructure can support mHealth programs | ☐ | ☐ | ☐ | ☐ | ☐ |
+| E8. Data from digital platforms can inform policy decisions | ☐ | ☐ | ☐ | ☐ | ☐ |
+
+### SECTION F: PERSONALIZED/PRECISION MEDICINE
+
+**F1. How important is personalized medicine (tailoring treatment to individual patients) for improving hypertension outcomes?**  
+☐ Extremely important  
+☐ Very important  
+☐ Moderately important  
+☐ Slightly important  
+☐ Not important
+
+**F2. Is personalized hypertension management feasible within Ghana's current health system?**  
+☐ Yes, very feasible  
+☐ Somewhat feasible  
+☐ Not feasible currently but could be in future  
+☐ Not feasible at all
+
+**F3. What resources would be needed to support personalized care approaches?** *(Select all that apply)*  
+☐ Clinical decision support tools  
+☐ Provider training  
+☐ Data management systems  
+☐ Point-of-care diagnostics  
+☐ Additional consultation time  
+☐ Patient education materials  
+☐ Funding for technology  
+☐ Policy guidelines  
+☐ Other (specify): __________
+
+### SECTION G: RESEARCH & EVIDENCE PRIORITIES
+
+**G1. How important is it to generate local evidence on integrative hypertension treatments?**  
+☐ Extremely important  
+☐ Very important  
+☐ Moderately important  
+☐ Slightly important  
+☐ Not important
+
+**G2. Would you support piloting integrative care models for hypertension in selected districts?**  
+☐ Strongly support  
+☐ Somewhat support  
+☐ Neutral  
+☐ Somewhat oppose  
+☐ Strongly oppose
+
+**G3. What types of evidence would be most persuasive for policy change?** *(Rank top 3: 1=most important)*  
+___ Randomized controlled trials  
+___ Cost-effectiveness analyses  
+___ Implementation research  
+___ Patient satisfaction data  
+___ Clinical outcomes data  
+___ Safety/adverse event data  
+___ Health system impact data
+
+**G4. Who should lead research on integrative hypertension care?** *(Select all that apply)*  
+☐ Academic institutions  
+☐ Ghana Health Service  
+☐ Traditional Medicine Practice Council  
+☐ Centre for Plant Medicine Research  
+☐ International partners  
+☐ Private sector  
+☐ Multi-stakeholder consortium  
+☐ Other (specify): __________
+
+### SECTION H: IMPLEMENTATION PRIORITIES
+
+**H1. If resources were available, which intervention would you prioritize for improving hypertension management?** *(Rank top 3: 1=highest priority)*  
+___ Ensuring consistent medication supply  
+___ Community-based screening programs  
+___ Provider training and capacity building  
+___ Patient education campaigns  
+___ Digital health platforms  
+___ Integrative care models  
+___ Home BP monitoring programs  
+___ Health insurance coverage expansion  
+___ Quality improvement initiatives  
+___ Other: _______________
+
+**H2. How ready is your organization to support innovations in hypertension care?**  
+☐ Very ready  
+☐ Somewhat ready  
+☐ Neutral  
+☐ Not very ready  
+☐ Not at all ready
+
+**H3. What would facilitate adoption of evidence-based innovations?** *(Select all that apply)*  
+☐ Pilot demonstration projects  
+☐ Clear implementation guidelines  
+☐ Training and mentorship  
+☐ Dedicated funding  
+☐ Political commitment  
+☐ Community engagement  
+☐ Stakeholder buy-in  
+☐ Monitoring and evaluation support  
+☐ Other (specify): __________
+
+---
+
+## DATA MANAGEMENT NOTES
+
+### Sample Size Recommendations
+
+- **Patients:** 150-200 (to capture diversity across age, gender, treatment patterns)
+- **Clinicians:** 40-60 (across different facility types and cadres)
+- **Herbal Practitioners:** 30-50 (registered and unregistered)
+- **Caregivers:** 50-80 (diverse relationships and caregiving intensity)
+- **Policymakers:** 20-30 (across different levels and sectors)
+
+### Administration Guidelines
+
+**Mode of Administration:**
+- Face-to-face interviews preferred for accuracy and rapport
+- Phone interviews acceptable for policymakers if needed
+- Research assistants should be thoroughly trained on each questionnaire
+- Allow 20-30 minutes per questionnaire (longer for patients)
+
+**Language:**
+- Translate questionnaires into local languages (Twi, Ga, Ewe, etc.)
+- Ensure back-translation for accuracy
+- Interviewers should be fluent in local languages
+- Record which language was used for each interview
+
+**Quality Control:**
+- Daily review of completed questionnaires by field supervisor
+- Random spot-checks during data collection
+- Weekly data entry and preliminary cleaning
+- Regular team debriefs to address emerging issues
+
+### Data Entry Template
+
+Create a database (RedCap, KoboToolbox, or Excel) with:
+- Unique IDs linked to questionnaire types
+- Date stamps
+- Interviewer IDs
+- Data validation rules (skip logic, range checks)
+- Regular backups
+
+### Ethical Considerations
+
+- Obtain informed consent before administering questionnaire
+- Ensure privacy during administration
+- Store completed forms securely
+- Pseudonymize all identifying information during data entry
+- Maintain separate file linking IDs to names (for follow-up only)
+
+---
+
+**END OF STRUCTURED QUESTIONNAIRES**

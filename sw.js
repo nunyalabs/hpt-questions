@@ -6,11 +6,10 @@ const CACHE_NAME = 'htn-survey-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'htn-runtime-' + CACHE_VERSION;
 
 const ASSETS_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/questions.js',
-    '/manifest.json',
-    '/sw.js',
+    './',
+    './index.html',
+    './questions.js',
+    './manifest.json',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js',
     'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css',
@@ -24,20 +23,23 @@ self.addEventListener('install', (event) => {
         caches.open(CACHE_NAME)
             .then((cache) => {
                 console.log('[Service Worker] Caching app shell');
-                // Cache essential files, ignore network failures for external resources
-                return Promise.allSettled([
-                    cache.addAll(ASSETS_TO_CACHE.slice(0, 5)), // Local files
-                    cache.addAll(ASSETS_TO_CACHE.slice(5)) // External resources
-                ]);
+                // Cache each item individually to prevent failure
+                const cachePromises = ASSETS_TO_CACHE.map(url => {
+                    return cache.add(url).catch(err => {
+                        console.warn('[Service Worker] Failed to cache:', url, err);
+                        return null; // Continue even if one fails
+                    });
+                });
+                return Promise.all(cachePromises);
             })
             .then(() => {
                 console.log('[Service Worker] Install complete');
+                return self.skipWaiting();
             })
             .catch((err) => {
                 console.error('[Service Worker] Install error:', err);
             })
     );
-    self.skipWaiting();
 });
 
 // Activate event - clean up old caches and claim clients
@@ -117,7 +119,7 @@ self.addEventListener('fetch', (event) => {
                     .catch(() => {
                         // Offline - return cached or fallback
                         return caches.match(request)
-                            .then((response) => response || caches.match('/index.html'));
+                            .then((response) => response || caches.match('./index.html'));
                     });
             })
     );

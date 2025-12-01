@@ -2,8 +2,8 @@
   "name": "Hypertension Questionnaire - Ghana",
   "short_name": "HTN Survey",
   "description": "Comprehensive hypertension management questionnaire for patients, clinicians, herbalists, caregivers, and policymakers",
-  "start_url": "/index.html",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
   "dir": "ltr",
@@ -36,7 +36,7 @@
   "shortcuts": [
     {
       "name": "Patient Questionnaire",
-      "url": "/index.html?tab=patients",
+      "url": "./?tab=patients",
       "description": "Start patient survey",
       "icons": [
         {
@@ -48,7 +48,7 @@
     },
     {
       "name": "Clinician Questionnaire",
-      "url": "/index.html?tab=clinicians",
+      "url": "./?tab=clinicians",
       "description": "Start clinician survey",
       "icons": [
         {
