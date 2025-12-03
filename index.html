@@ -25,6 +25,10 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="HTN Survey">
     
+    <!-- Google API for Drive Upload -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://apis.google.com/js/api.js" async defer></script>
+    
     <style>
         :root {
             --primary: #0d6efd;
@@ -395,9 +399,190 @@
                     const store = db.createObjectStore('responses', { keyPath: 'id', autoIncrement: true });
                     store.createIndex('type', 'type', { unique: false });
                     store.createIndex('timestamp', 'timestamp', { unique: false });
+                    store.createIndex('synced', 'synced', { unique: false });
                     console.log('Database setup complete');
                 }
             };
+        }
+
+        // ===== GOOGLE DRIVE INTEGRATION =====
+        // To use Google Drive, you need to:
+        // 1. Go to https://console.cloud.google.com
+        // 2. Create a project and enable Google Drive API
+        // 3. Create OAuth credentials (Web application)
+        // 4. Add your domain to authorized JavaScript origins
+        // 5. Replace CLIENT_ID below with your actual Client ID
+        
+        const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com'; // Replace this!
+        const GOOGLE_API_KEY = 'YOUR_API_KEY'; // Replace this!
+        const DRIVE_FOLDER_NAME = 'HTN_Survey_Data';
+        
+        let googleAccessToken = null;
+        let googleUser = null;
+        
+        // Initialize Google API
+        function initGoogleAPI() {
+            if (typeof gapi === 'undefined') {
+                console.log('Google API not loaded yet');
+                return;
+            }
+            
+            gapi.load('client', async () => {
+                try {
+                    await gapi.client.init({
+                        apiKey: GOOGLE_API_KEY,
+                        discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'],
+                    });
+                    console.log('Google API client initialized');
+                } catch (err) {
+                    console.error('Error initializing Google API:', err);
+                }
+            });
+        }
+        
+        // Sign in to Google
+        async function signInToGoogle() {
+            return new Promise((resolve, reject) => {
+                if (GOOGLE_CLIENT_ID === 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com') {
+                    reject('Google Drive not configured. Please set up Google API credentials.');
+                    return;
+                }
+                
+                const client = google.accounts.oauth2.initTokenClient({
+                    client_id: GOOGLE_CLIENT_ID,
+                    scope: 'https://www.googleapis.com/auth/drive.file',
+                    callback: (response) => {
+                        if (response.error) {
+                            reject(response.error);
+                            return;
+                        }
+                        googleAccessToken = response.access_token;
+                        console.log('✅ Google Sign-in successful');
+                        resolve(response.access_token);
+                    },
+                });
+                
+                client.requestAccessToken({ prompt: 'consent' });
+            });
+        }
+        
+        // Find or create folder in Google Drive
+        async function getOrCreateFolder() {
+            // Search for existing folder
+            const searchResponse = await fetch(
+                `https://www.googleapis.com/drive/v3/files?q=name='${DRIVE_FOLDER_NAME}' and mimeType='application/vnd.google-apps.folder' and trashed=false`,
+                {
+                    headers: { 'Authorization': `Bearer ${googleAccessToken}` }
+                }
+            );
+            const searchResult = await searchResponse.json();
+            
+            if (searchResult.files && searchResult.files.length > 0) {
+                return searchResult.files[0].id;
+            }
+            
+            // Create folder
+            const createResponse = await fetch('https://www.googleapis.com/drive/v3/files', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${googleAccessToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: DRIVE_FOLDER_NAME,
+                    mimeType: 'application/vnd.google-apps.folder'
+                })
+            });
+            const folder = await createResponse.json();
+            console.log('📁 Created folder:', DRIVE_FOLDER_NAME);
+            return folder.id;
+        }
+        
+        // Upload JSON to Google Drive
+        async function uploadToGoogleDrive(responseData) {
+            if (!googleAccessToken) {
+                await signInToGoogle();
+            }
+            
+            const folderId = await getOrCreateFolder();
+            const fileName = `${responseData.respondentId}_${responseData.type}_${new Date().toISOString().split('T')[0]}.json`;
+            const fileContent = JSON.stringify(responseData, null, 2);
+            
+            const metadata = {
+                name: fileName,
+                mimeType: 'application/json',
+                parents: [folderId]
+            };
+            
+            const form = new FormData();
+            form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
+            form.append('file', new Blob([fileContent], { type: 'application/json' }));
+            
+            const response = await fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${googleAccessToken}`
+                },
+                body: form
+            });
+            
+            const result = await response.json();
+            
+            if (result.id) {
+                console.log('✅ Uploaded to Google Drive:', fileName);
+                return result;
+            } else {
+                throw new Error('Upload failed: ' + JSON.stringify(result));
+            }
+        }
+        
+        // Mark response as synced in IndexedDB
+        function markAsSynced(id) {
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction(['responses'], 'readwrite');
+                const store = transaction.objectStore('responses');
+                const getRequest = store.get(id);
+                
+                getRequest.onsuccess = () => {
+                    const data = getRequest.result;
+                    if (data) {
+                        data.synced = true;
+                        data.syncedAt = new Date().toISOString();
+                        const updateRequest = store.put(data);
+                        updateRequest.onsuccess = () => resolve(data);
+                        updateRequest.onerror = () => reject(updateRequest.error);
+                    }
+                };
+                getRequest.onerror = () => reject(getRequest.error);
+            });
+        }
+        
+        // Sync all unsynced responses to Google Drive
+        async function syncAllToGoogleDrive() {
+            const responses = await getAllResponses();
+            const unsynced = responses.filter(r => !r.synced);
+            
+            if (unsynced.length === 0) {
+                alert('✅ All data already synced!');
+                return;
+            }
+            
+            let synced = 0;
+            let failed = 0;
+            
+            for (const response of unsynced) {
+                try {
+                    await uploadToGoogleDrive(response);
+                    await markAsSynced(response.id);
+                    synced++;
+                } catch (err) {
+                    console.error('Sync failed for', response.id, err);
+                    failed++;
+                }
+            }
+            
+            alert(`✅ Synced ${synced} responses to Google Drive.\n${failed > 0 ? `❌ ${failed} failed.` : ''}`);
+            loadDataTable(); // Refresh table to show sync status
         }
 
         function saveResponse(type, data) {
@@ -414,11 +599,15 @@
                     type: type,
                     data: data,
                     timestamp: new Date().toISOString(),
-                    respondentId: generateRespondentId(type)
+                    respondentId: generateRespondentId(type),
+                    synced: false  // Not synced to cloud yet
                 };
                 
                 const request = store.add(responseData);
-                request.onsuccess = () => resolve(responseData);
+                request.onsuccess = () => {
+                    responseData.id = request.result; // Get auto-generated ID
+                    resolve(responseData);
+                };
                 request.onerror = () => reject(request.error);
             });
         }
@@ -675,11 +864,16 @@
                 </div>
                 
                 <div class="question-group">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h6 class="mb-0">Responses (<span id="responseCount">0</span>)</h6>
-                        <button class="btn btn-sm btn-success" onclick="exportData()">
-                            <i class="bi bi-download"></i> Export JSON
-                        </button>
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+                        <h6 class="mb-0">Responses (<span id="responseCount">0</span>) - <span id="unsyncedCount">0</span> unsynced</h6>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-primary" onclick="syncAllToGoogleDrive()">
+                                <i class="bi bi-cloud-upload"></i> Sync to Google Drive
+                            </button>
+                            <button class="btn btn-sm btn-success" onclick="exportData()">
+                                <i class="bi bi-download"></i> Export JSON
+                            </button>
+                        </div>
                     </div>
                     
                     <div class="table-responsive">
@@ -689,7 +883,7 @@
                                     <th>ID</th>
                                     <th>Type</th>
                                     <th>Respondent ID</th>
-                                    <th>Timestamp</th>
+                                    <th>Synced</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -706,8 +900,12 @@
             getAllResponses().then(responses => {
                 const tbody = document.getElementById('dataTableBody');
                 const countSpan = document.getElementById('responseCount');
+                const unsyncedSpan = document.getElementById('unsyncedCount');
                 
                 if (countSpan) countSpan.textContent = responses.length;
+                
+                const unsynced = responses.filter(r => !r.synced).length;
+                if (unsyncedSpan) unsyncedSpan.textContent = unsynced;
                 
                 if (!tbody) return;
                 
@@ -719,13 +917,15 @@
                 tbody.innerHTML = '';
                 responses.reverse().forEach(resp => {
                     const tr = document.createElement('tr');
-                    const date = new Date(resp.timestamp).toLocaleString();
+                    const syncBadge = resp.synced 
+                        ? '<span class="badge bg-success"><i class="bi bi-cloud-check"></i> Synced</span>'
+                        : '<span class="badge bg-warning text-dark"><i class="bi bi-cloud-slash"></i> Local</span>';
                     
                     tr.innerHTML = `
                         <td>${resp.id}</td>
                         <td><span class="badge bg-primary">${resp.type}</span></td>
                         <td>${resp.respondentId}</td>
-                        <td>${date}</td>
+                        <td>${syncBadge}</td>
                         <td>
                             <button class="btn btn-sm btn-info" onclick='viewResponse(${JSON.stringify(resp).replace(/'/g, "&apos;")})'>
                                 <i class="bi bi-eye"></i>
@@ -894,7 +1094,7 @@
             }
         }
 
-        function submitCurrentForm() {
+        async function submitCurrentForm() {
             const formType = getCurrentFormType();
             if (formType === 'data') return;
             
@@ -910,24 +1110,38 @@
             
             const formData = getCurrentFormData();
             
-            // Save to database
-            saveResponse(formType, formData)
-                .then(response => {
-                    alert(`✓ Survey submitted successfully!\nRespondent ID: ${response.respondentId}`);
-                    form.reset();
-                    form.classList.remove('was-validated');
-                    localStorage.removeItem(`draft_${formType}`);
-                    
-                    // Set date to today
-                    const today = new Date().toISOString().split('T')[0];
-                    form.querySelectorAll('input[type="date"]').forEach(input => {
-                        input.value = today;
-                    });
-                })
-                .catch(err => {
-                    console.error('Submit error:', err);
-                    alert('Failed to submit. Please try again.');
+            try {
+                // Save to local database first
+                const response = await saveResponse(formType, formData);
+                
+                // Try to upload to Google Drive if online
+                let cloudSynced = false;
+                if (navigator.onLine && GOOGLE_CLIENT_ID !== 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com') {
+                    try {
+                        await uploadToGoogleDrive(response);
+                        await markAsSynced(response.id);
+                        cloudSynced = true;
+                    } catch (cloudErr) {
+                        console.warn('Cloud sync failed, data saved locally:', cloudErr);
+                    }
+                }
+                
+                const syncMsg = cloudSynced ? '\n☁️ Synced to Google Drive' : '\n💾 Saved locally (sync later)';
+                alert(`✓ Survey submitted successfully!\nRespondent ID: ${response.respondentId}${syncMsg}`);
+                
+                form.reset();
+                form.classList.remove('was-validated');
+                localStorage.removeItem(`draft_${formType}`);
+                
+                // Set date to today
+                const today = new Date().toISOString().split('T')[0];
+                form.querySelectorAll('input[type="date"]').forEach(input => {
+                    input.value = today;
                 });
+            } catch (err) {
+                console.error('Submit error:', err);
+                alert('Failed to submit. Please try again.');
+            }
         }
 
         // ===== TAB NAVIGATION =====
@@ -1043,6 +1257,13 @@
         window.addEventListener('DOMContentLoaded', () => {
             initDB();
             renderApp();
+            
+            // Initialize Google API after a short delay
+            setTimeout(() => {
+                if (typeof gapi !== 'undefined') {
+                    initGoogleAPI();
+                }
+            }, 1000);
         });
     </script>
     
