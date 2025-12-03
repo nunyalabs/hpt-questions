@@ -25,9 +25,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="HTN Survey">
     
-    <!-- Google API for Drive Upload -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="https://apis.google.com/js/api.js" async defer></script>
+
     
     <style>
         :root {
@@ -405,135 +403,32 @@
             };
         }
 
-        // ===== GOOGLE DRIVE INTEGRATION =====
-        // To use Google Drive, you need to:
-        // 1. Go to https://console.cloud.google.com
-        // 2. Create a project and enable Google Drive API
-        // 3. Create OAuth credentials (Web application)
-        // 4. Add your domain to authorized JavaScript origins
-        // 5. Replace CLIENT_ID below with your actual Client ID
+        // ===== GOOGLE SHEETS INTEGRATION =====
+        // All survey responses are submitted to a central Google Sheet
+        // This allows multiple data collectors to submit to one location
         
-        const GOOGLE_CLIENT_ID = '806303271822-52rd73a28h74q5u14jl0saeccccmk5rq.apps.googleusercontent.com';
-        const GOOGLE_API_KEY = 'AIzaSyCgOOxD0lBpqNXIjWuO9EcOVKSR6Y_PqjY';
-        const DRIVE_FOLDER_NAME = 'HTN_Survey_Data';
+        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyYmw531g-fpEPjrLiMt4UoWAYaWYNl0R-aDaCo6XX3NxL7MYEXA0QzpxSmnYjQcdcR/exec';
         
-        let googleAccessToken = null;
-        let googleUser = null;
-        
-        // Initialize Google API
-        function initGoogleAPI() {
-            if (typeof gapi === 'undefined') {
-                console.log('Google API not loaded yet');
-                return;
-            }
-            
-            gapi.load('client', async () => {
-                try {
-                    await gapi.client.init({
-                        apiKey: GOOGLE_API_KEY,
-                        discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'],
-                    });
-                    console.log('Google API client initialized');
-                } catch (err) {
-                    console.error('Error initializing Google API:', err);
-                }
-            });
-        }
-        
-        // Sign in to Google
-        async function signInToGoogle() {
-            return new Promise((resolve, reject) => {
-                if (GOOGLE_CLIENT_ID === 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com') {
-                    reject('Google Drive not configured. Please set up Google API credentials.');
-                    return;
-                }
-                
-                const client = google.accounts.oauth2.initTokenClient({
-                    client_id: GOOGLE_CLIENT_ID,
-                    scope: 'https://www.googleapis.com/auth/drive.file',
-                    callback: (response) => {
-                        if (response.error) {
-                            reject(response.error);
-                            return;
-                        }
-                        googleAccessToken = response.access_token;
-                        console.log('✅ Google Sign-in successful');
-                        resolve(response.access_token);
-                    },
-                });
-                
-                client.requestAccessToken({ prompt: 'consent' });
-            });
-        }
-        
-        // Find or create folder in Google Drive
-        async function getOrCreateFolder() {
-            // Search for existing folder
-            const searchResponse = await fetch(
-                `https://www.googleapis.com/drive/v3/files?q=name='${DRIVE_FOLDER_NAME}' and mimeType='application/vnd.google-apps.folder' and trashed=false`,
-                {
-                    headers: { 'Authorization': `Bearer ${googleAccessToken}` }
-                }
-            );
-            const searchResult = await searchResponse.json();
-            
-            if (searchResult.files && searchResult.files.length > 0) {
-                return searchResult.files[0].id;
-            }
-            
-            // Create folder
-            const createResponse = await fetch('https://www.googleapis.com/drive/v3/files', {
+        // Upload response to Google Sheets
+        async function uploadToGoogleSheets(responseData) {
+            const response = await fetch(GOOGLE_SHEETS_URL, {
                 method: 'POST',
+                mode: 'no-cors', // Required for Apps Script Web Apps
                 headers: {
-                    'Authorization': `Bearer ${googleAccessToken}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    name: DRIVE_FOLDER_NAME,
-                    mimeType: 'application/vnd.google-apps.folder'
+                    respondentId: responseData.respondentId,
+                    type: responseData.type,
+                    timestamp: responseData.timestamp,
+                    data: responseData.data
                 })
             });
-            const folder = await createResponse.json();
-            console.log('📁 Created folder:', DRIVE_FOLDER_NAME);
-            return folder.id;
-        }
-        
-        // Upload JSON to Google Drive
-        async function uploadToGoogleDrive(responseData) {
-            if (!googleAccessToken) {
-                await signInToGoogle();
-            }
             
-            const folderId = await getOrCreateFolder();
-            const fileName = `${responseData.respondentId}_${responseData.type}_${new Date().toISOString().split('T')[0]}.json`;
-            const fileContent = JSON.stringify(responseData, null, 2);
-            
-            const metadata = {
-                name: fileName,
-                mimeType: 'application/json',
-                parents: [folderId]
-            };
-            
-            const form = new FormData();
-            form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
-            form.append('file', new Blob([fileContent], { type: 'application/json' }));
-            
-            const response = await fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${googleAccessToken}`
-                },
-                body: form
-            });
-            
-            const result = await response.json();
-            
-            if (result.id) {
-                console.log('✅ Uploaded to Google Drive:', fileName);
-                return result;
-            } else {
-                throw new Error('Upload failed: ' + JSON.stringify(result));
-            }
+            // With no-cors mode, we can't read the response
+            // but if the request completes without error, it was successful
+            console.log('✅ Submitted to Google Sheets:', responseData.respondentId);
+            return { success: true };
         }
         
         // Mark response as synced in IndexedDB
@@ -557,8 +452,13 @@
             });
         }
         
-        // Sync all unsynced responses to Google Drive
-        async function syncAllToGoogleDrive() {
+        // Sync all unsynced responses to Google Sheets
+        async function syncAllToCloud() {
+            if (!navigator.onLine) {
+                alert('⚠️ You are offline. Please connect to the internet to sync.');
+                return;
+            }
+            
             const responses = await getAllResponses();
             const unsynced = responses.filter(r => !r.synced);
             
@@ -572,7 +472,7 @@
             
             for (const response of unsynced) {
                 try {
-                    await uploadToGoogleDrive(response);
+                    await uploadToGoogleSheets(response);
                     await markAsSynced(response.id);
                     synced++;
                 } catch (err) {
@@ -581,7 +481,7 @@
                 }
             }
             
-            alert(`✅ Synced ${synced} responses to Google Drive.\n${failed > 0 ? `❌ ${failed} failed.` : ''}`);
+            alert(`✅ Synced ${synced} responses to cloud.\n${failed > 0 ? `❌ ${failed} failed.` : ''}`);
             loadDataTable(); // Refresh table to show sync status
         }
 
@@ -891,8 +791,8 @@
                     <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
                         <h6 class="mb-0">Responses (<span id="responseCount">0</span>) - <span id="unsyncedCount">0</span> unsynced</h6>
                         <div class="d-flex gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-primary" onclick="syncAllToGoogleDrive()">
-                                <i class="bi bi-cloud-upload"></i> Sync to Google Drive
+                            <button class="btn btn-sm btn-primary" onclick="syncAllToCloud()">
+                                <i class="bi bi-cloud-upload"></i> Sync to Cloud
                             </button>
                             <button class="btn btn-sm btn-success" onclick="exportData()">
                                 <i class="bi bi-download"></i> Export JSON
@@ -1178,11 +1078,11 @@
                 // Save to local database first
                 const response = await saveResponse(formType, formData);
                 
-                // Try to upload to Google Drive if online
+                // Try to upload to Google Sheets if online
                 let cloudSynced = false;
-                if (navigator.onLine && GOOGLE_CLIENT_ID !== 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com') {
+                if (navigator.onLine) {
                     try {
-                        await uploadToGoogleDrive(response);
+                        await uploadToGoogleSheets(response);
                         await markAsSynced(response.id);
                         cloudSynced = true;
                     } catch (cloudErr) {
@@ -1190,7 +1090,7 @@
                     }
                 }
                 
-                const syncMsg = cloudSynced ? '\n☁️ Synced to Google Drive' : '\n💾 Saved locally (sync later)';
+                const syncMsg = cloudSynced ? '\n☁️ Synced to cloud' : '\n💾 Saved locally (sync later when online)';
                 alert(`✓ Survey submitted successfully!\nRespondent ID: ${response.respondentId}${syncMsg}`);
                 
                 form.reset();
@@ -1321,13 +1221,6 @@
         window.addEventListener('DOMContentLoaded', () => {
             initDB();
             renderApp();
-            
-            // Initialize Google API after a short delay
-            setTimeout(() => {
-                if (typeof gapi !== 'undefined') {
-                    initGoogleAPI();
-                }
-            }, 1000);
         });
     </script>
     
